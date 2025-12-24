@@ -6,30 +6,34 @@
 
 html {
   font-family: 'Quicksand', sans-serif;
-  
 }
+
 body {
   background-color: rgb(28, 23, 23);
-  color: white; 
-  margin:0;
+  color: white;
+  margin: 0;
 }
 
 .header-background {
-  
   position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
   height: 320px;
-  top: 0;
+  z-index: -1;
 }
 
 h1 {
-  text-align:center;
-  margin-top: 1px;
-  ;
- 
+  text-align: center;
+  margin-top: 1rem;
 }
+
 p {
-  text-align:center
-  ;
- 
+  text-align: center;
+}
+
+.page-content {
+  position: relative;
+  z-index: 1;
+  padding-top: 6rem;
 }
