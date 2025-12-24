@@ -14,14 +14,6 @@ body {
   margin: 0;
 }
 
-.header-background {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 320px;
-  z-index: -1;
-}
 
 h1 {
   text-align: center;
