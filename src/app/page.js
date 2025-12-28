@@ -6,7 +6,11 @@ export default function Home() {
   return (
     <>
       <header className={classes.header}>
-        <div className={classes.slideshow}>
+        <div className={classes.logoAndSlideshow}>
+          {/* Logo yawe */}
+          <h1 className={classes.logo}>NextLevel Food</h1>
+
+          {/* Slideshow iri munsi ya logo */}
           <ImageSlideshow />
         </div>
 

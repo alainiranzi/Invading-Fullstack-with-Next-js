@@ -1,56 +1,66 @@
 .header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 1rem 1rem;
-
-}
-@media (min-width: 768px) {
-    .header {
-        padding: 2rem 10%;
-    }
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2rem 1rem;
+  color: white;
 }
 
-.nav ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    gap: 1.5rem;
-}
-.nav a:hover,
-.nav a:active {
-    background: linear-gradient(90deg, #ff8a05, #f9b331);
-    background-clip: text;
-    -webkit-background-clip: text;
-    text-shadow: 0 0 18px rgba(248, 190, 42, 0.8);
+/* Logo */
+.logoWrapper {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1rem; /* ifasha slideshow igume hasi */
 }
 
-.active {
-    background: linear-gradient(90deg, #ff8a05, #f9b331);
-background-clip: text;
--webkit-background-clip: text;
--webkit-text-fill-color: transparent;
-
+.logoText {
+  font-weight: bold;
+  font-size: 1.5rem;
 }
 
-.logo {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 2rem;
-    text-decoration: none;
-    color: white;
-    font-weight: 'Montserrat', sans-serif;
-    letter-spacing: 0.15rem;
-    text-transform: uppercase;
-    font-size: 1.5rem;
+/* Slideshow */
+.slideshowWrapper {
+  width: 100%;
+  max-width: 400px; /* ishobora guhinduka bitewe n'ubugari ushaka */
+  margin-bottom: 2rem;
 }
 
-.logo img {
-    width: 5rem;
-    height: 5rem;
-    object-fit: contain;
-    filter: drop-shadow(0 0 0.75rem rgba(0, 0, 0, 0.5));
+/* Hero text */
+.hero {
+  text-align: center;
+  margin-bottom: 2rem;
 }
 
+.hero h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.hero p {
+  font-size: 1.25rem;
+}
+
+/* CTA links */
+.cta {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.cta a {
+  display: inline-block;
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.5rem;
+  background-color: #bb9e8c;
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.cta a:hover {
+  background-color: #59453c;
+  transform: translateY(-2px);
+}

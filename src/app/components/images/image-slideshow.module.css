@@ -1,37 +1,19 @@
 .slideshow {
-  position: relative;
-  width: 250px;   /* small but visible */
-  height: 150px;  /* container height */
-  margin: 0 auto 1rem; /* center + margin below for hero text */
-  overflow: hidden;
-  border-radius: 10px;
-  text-align: center;
-  
+  display: flex;
+  gap: 0.5rem;
+  justify-content: flex-start; /* images ziguma kuri left */
+  align-items: center;
+  margin-top: 0.5rem;
 }
 
-.slideshow img {
-  
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  position: absolute;
-  
-  top: 0;
-  left: 0;
-  transition: all 0.5s ease-in-out;
-  transform: scale(1.1) translateX(-1rem) rotate(-5deg);
-}
-
-.inactive {
-  opacity: 0;
+.slideshow div {
   transition: opacity 0.5s ease-in-out;
 }
 
 .active {
   opacity: 1;
-  transition: opacity 0.5s ease-in-out;
-  position: absolute;
-  top: 0;
-  left: 0;
 }
 
+.inactive {
+  opacity: 0.3;
+}

@@ -15,7 +15,7 @@ export default function ImageSlideshow() {
 
   useEffect(() => {
     const interval = setInterval(() => {
-      setCurrentImageIndex((prev) =>
+      setCurrentImageIndex(prev =>
         prev < images.length - 1 ? prev + 1 : 0
       );
     }, 5000);
@@ -26,18 +26,15 @@ export default function ImageSlideshow() {
   return (
     <div className={classes.slideshow}>
       {images.map((image, index) => (
-        <Image
-          key={index}
-          src={image.src}
-          alt={image.alt}
-          fill
-          className={
-            index === currentImageIndex
-              ? classes.active
-              : classes.inactive
-          }
-          priority={index === 0}
-        />
+        <div key={index} className={index === currentImageIndex ? classes.active : classes.inactive}>
+          <Image
+            src={image.src}
+            alt={image.alt}
+            width={120}
+            height={80}
+            objectFit="cover"
+          />
+        </div>
       ))}
     </div>
   );
