@@ -1,13 +1,13 @@
-/* ================= HEADER WRAPPER ================= */
+
 .header {
   position: relative;
   min-height: 420px;
   width: 100%;
 
   display: flex;
-  flex-direction: column;        /* ibintu bijye vertical */
-  justify-content: center;       /* hagati vertically */
-  align-items: center;           /* hagati horizontally */
+  flex-direction: column;        
+  justify-content: center;       
+  align-items: center;           
 
   text-align: center;
   padding: 2rem 1rem;
@@ -15,7 +15,7 @@
   z-index: 1;
 }
 
-/* ================= HERO TEXT ================= */
+
 .hero {
   max-width: 800px;
   z-index: 2;
@@ -32,7 +32,7 @@
   opacity: 0.95;
 }
 
-/* ================= CTA ================= */
+
 .cta {
   display: flex;
   justify-content: center;
@@ -58,20 +58,20 @@
   transform: translateY(-2px);
 }
 
-/* ================= SLIDESHOW ================= */
+
 .slideshow {
   position: absolute;
   top: 50%;
   left: 50%;
-  width: 260px;          /* 👉 ifoto iba ntoya */
+  width: 260px;          
   height: 180px;
   transform: translate(-50%, -50%);
   z-index: 0;
-  opacity: 0.25;         /* 👉 ntipfuke amagambo */
+  opacity: 0.25;         
   pointer-events: none;
 }
 
-/* ================= RESPONSIVE ================= */
+
 @media (max-width: 768px) {
   .hero h1 {
     font-size: 2.2rem;

@@ -2,34 +2,24 @@ import Link from "next/link";
 import Image from "next/image";
 import classes from "./main-header.module.css";
 import MainHeaderBackground from "./main-header-background";
+import ImageSlideshow from "../images/image-slideshow";
 
 export default function MainHeader() {
   return (
     <>
       <MainHeaderBackground />
-
       <header className={classes.header}>
-        <Link href="/" className={classes.logo}>
-          <Image
-            src="/images/logo.png"
-            alt="Meals on plate"
-            width={80}
-            height={80}
-            priority
-          />
-          <span>NextLevel Food</span>
-        </Link>
+        <ImageSlideshow />
 
-        <nav className={classes.nav}>
-          <ul>
-            <li>
-              <Link href="/meals">Browse Meals</Link>
-            </li>
-            <li>
-              <Link href="/community">Foodies Community</Link>
-            </li>
-          </ul>
-        </nav>
+        <div className={classes.hero}>
+          <h1>Next food for next level foodies</h1>
+          <p>Taste & share food from all over the world</p>
+        </div>
+
+        <div className={classes.cta}>
+          <Link href="/meals">Explore foodies</Link>
+          <Link href="/community">Join the community</Link>
+        </div>
       </header>
     </>
   );

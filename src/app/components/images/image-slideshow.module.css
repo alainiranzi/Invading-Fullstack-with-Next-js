@@ -5,23 +5,33 @@
   margin: 0 auto 1rem; /* center + margin below for hero text */
   overflow: hidden;
   border-radius: 10px;
+  text-align: center;
+  
 }
 
-.slideshow div {
+.slideshow img {
+  
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
   position: absolute;
+  
   top: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  transition: opacity 0.5s ease-in-out;
-  opacity: 0;
-}
-
-.active {
-  opacity: 1;
-  z-index: 2;
+  left: 0;
+  transition: all 0.5s ease-in-out;
+  transform: scale(1.1) translateX(-1rem) rotate(-5deg);
 }
 
 .inactive {
   opacity: 0;
-  z-index: 1;
+  transition: opacity 0.5s ease-in-out;
 }
+
+.active {
+  opacity: 1;
+  transition: opacity 0.5s ease-in-out;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+

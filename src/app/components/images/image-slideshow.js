@@ -5,10 +5,9 @@ import Image from "next/image";
 import classes from "./image-slideshow.module.css";
 
 const images = [
-  { image: "/images/burger.webp", alt: "A delicious, juicy burger" },
-  { image: "/images/pizza.jpg", alt: "A delicious pizza" },
-  { image: "/images/curry.jpeg", alt: "A delicious, spicy curry" },
-  { image: "/images/pizza.jpeg", alt: "Steamed pizza" },
+  { src: "/images/burger.webp", alt: "A delicious, juicy burger" },
+  { src: "/images/pizza.jpeg", alt: "A delicious pizza" },
+  { src: "/images/curry.jpeg", alt: "A delicious, spicy curry" },
 ];
 
 export default function ImageSlideshow() {
@@ -19,26 +18,26 @@ export default function ImageSlideshow() {
       setCurrentImageIndex((prev) =>
         prev < images.length - 1 ? prev + 1 : 0
       );
-    }, 4000);
+    }, 5000);
 
     return () => clearInterval(interval);
   }, []);
 
   return (
     <div className={classes.slideshow}>
-      {images.map((img, index) => (
-        <div
+      {images.map((image, index) => (
+        <Image
           key={index}
-          className={index === currentImageIndex ? classes.active : classes.inactive}
-        >
-          <Image
-            src={img.image}
-            alt={img.alt}
-            width={250}   // 🔹 small width
-            height={150}  // 🔹 small height
-                objectFit="cover"
-          />      
-        </div>
+          src={image.src}
+          alt={image.alt}
+          fill
+          className={
+            index === currentImageIndex
+              ? classes.active
+              : classes.inactive
+          }
+          priority={index === 0}
+        />
       ))}
     </div>
   );
