@@ -8,10 +8,7 @@ const images = [
   { image: "/images/burger.webp", alt: "A delicious, juicy burger" },
   { image: "/images/pizza.jpg", alt: "A delicious pizza" },
   { image: "/images/curry.jpeg", alt: "A delicious, spicy curry" },
-  { image: "/images/dumplings.jpg", alt: "Steamed dumplings" },
-  { image: "/images/macncheese.jpg", alt: "Mac and Cheese" },
-  { image: "/images/schnitzel.jpg", alt: "A delicious schnitzel" },
-  { image: "/images/tomato-salad.jpg", alt: "A delicious tomato salad" },
+  { image: "/images/pizza.jpeg", alt: "Steamed pizza" },
 ];
 
 export default function ImageSlideshow() {
@@ -30,14 +27,18 @@ export default function ImageSlideshow() {
   return (
     <div className={classes.slideshow}>
       {images.map((img, index) => (
-        <Image
+        <div
           key={index}
-          src={img.image}
-          alt={img.alt}
-          fill
-          priority={index === 0}
-          className={index === currentImageIndex ? classes.active : ""}
-        />
+          className={index === currentImageIndex ? classes.active : classes.inactive}
+        >
+          <Image
+            src={img.image}
+            alt={img.alt}
+            width={250}   // 🔹 small width
+            height={150}  // 🔹 small height
+                objectFit="cover"
+          />      
+        </div>
       ))}
     </div>
   );

@@ -1,0 +1,27 @@
+.slideshow {
+  position: relative;
+  width: 250px;   /* small but visible */
+  height: 150px;  /* container height */
+  margin: 0 auto 1rem; /* center + margin below for hero text */
+  overflow: hidden;
+  border-radius: 10px;
+}
+
+.slideshow div {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  transition: opacity 0.5s ease-in-out;
+  opacity: 0;
+}
+
+.active {
+  opacity: 1;
+  z-index: 2;
+}
+
+.inactive {
+  opacity: 0;
+  z-index: 1;
+}
