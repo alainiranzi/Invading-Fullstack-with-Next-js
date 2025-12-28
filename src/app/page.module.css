@@ -1,66 +1,96 @@
-.headerWrapper {
+/* ================= HEADER WRAPPER ================= */
+.header {
   position: relative;
+  min-height: 420px;
   width: 100%;
-  height: 400px; /* height of header */
+
   display: flex;
-  justify-content: center;
-  align-items: center;
-  overflow: hidden;
+  flex-direction: column;        /* ibintu bijye vertical */
+  justify-content: center;       /* hagati vertically */
+  align-items: center;           /* hagati horizontally */
+
+  text-align: center;
+  padding: 2rem 1rem;
+  color: white;
+  z-index: 1;
 }
 
-.headerContent {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  text-align: center;
-  color: white; /* ensures contrast with gradient */
-  z-index: 10;
+/* ================= HERO TEXT ================= */
+.hero {
+  max-width: 800px;
+  z-index: 2;
 }
 
 .hero h1 {
   font-size: 3rem;
-  margin-bottom: 1rem;
   line-height: 1.2;
-  padding-bottom: 180px;
+  margin-bottom: 1rem;
 }
 
 .hero p {
   font-size: 1.25rem;
-  margin-bottom: 2rem;
+  opacity: 0.95;
+}
+
+/* ================= CTA ================= */
+.cta {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 1.75rem;
+  z-index: 2;
 }
 
 .cta a {
   display: inline-block;
+  padding: 0.75rem 1.75rem;
+  border-radius: 0.6rem;
   background-color: #bb9e8c;
-  color: #fff;
-  padding: 0.75rem 1.5rem;
-  margin: 0 0.5rem;
-  border-radius: 0.5rem;
+  color: white;
   text-decoration: none;
   font-weight: bold;
-  transition: background 0.3s ease;
-  padding-bottom: 30px;
+  transition: background 0.3s ease, transform 0.2s ease;
 }
 
 .cta a:hover {
   background-color: #59453c;
+  transform: translateY(-2px);
 }
 
-.section {
-  max-width: 75rem;
-  margin: 4rem auto;
-  padding: 0 1rem;
+/* ================= SLIDESHOW ================= */
+.slideshow {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 260px;          /* 👉 ifoto iba ntoya */
+  height: 180px;
+  transform: translate(-50%, -50%);
+  z-index: 0;
+  opacity: 0.25;         /* 👉 ntipfuke amagambo */
+  pointer-events: none;
+}
+
+/* ================= RESPONSIVE ================= */
+@media (max-width: 768px) {
+  .hero h1 {
+    font-size: 2.2rem;
+  }
+
+  .hero p {
+    font-size: 1.1rem;
+  }
+
+  .slideshow {
+    width: 200px;
+    height: 140px;
+  }
 }
 
 .section h2 {
-  font-size: 2rem;
-  margin-bottom: 1rem;
-  text-align: center;
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    color: #eee8e8;
 }
 
-.section p {
-  font-size: 1.125rem;
-  line-height: 1.6;
-  margin-bottom: 1rem;
-}
