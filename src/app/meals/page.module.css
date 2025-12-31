@@ -1,0 +1,21 @@
+.cta {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.cta a {
+  display: inline-block;
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.5rem;
+  background-color: #e45a05;
+  color: rgb(168, 32, 32);
+  text-decoration: none;
+  font-weight: bold;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.cta a:hover {
+  background-color: #59453c;
+  transform: translateY(-2px);
+}
