@@ -1,0 +1,42 @@
+/* Header text */
+.header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.header h1 {
+  font-size: 2rem;
+  color: #f9572a;
+}
+
+.summary {
+  font-size: 1.2rem;
+  color: #333;
+}
+
+/* Meal image */
+.mealImage {
+  display: block;
+  margin: 0 auto 2rem auto;
+  border-radius: 10px;
+  object-fit: cover;
+}
+
+/* Instructions section */
+.instructions {
+  margin: 0 auto;
+  max-width: 600px;
+  font-size: 1rem;
+  line-height: 1.6;
+  background: #f5f5f5;
+  padding: 1rem 1.5rem;
+  border-radius: 8px;
+}
+
+/* Footer */
+.footer {
+  margin-top: 2rem;
+  text-align: center;
+  font-size: 0.9rem;
+  color: #666;
+}
