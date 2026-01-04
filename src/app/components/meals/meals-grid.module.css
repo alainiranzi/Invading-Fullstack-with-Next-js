@@ -1,8 +1,7 @@
 .meals {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  display:grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
   gap: 1rem;
   padding: 0;
-  margin: 0;
-  list-style: none;
+  margin: 0 auto;
 }

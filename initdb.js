@@ -1,7 +1,7 @@
 const sql = require('better-sqlite3');
 const db = sql('meals.db');
 
-// Tabela ya meals
+
 db.prepare(`
   CREATE TABLE IF NOT EXISTS meals (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
@@ -15,12 +15,12 @@ db.prepare(`
   )
 `).run();
 
-// Dummy meals zose hamwe na amafoto
+
 const dummyMeals = [
   {
     title: 'Juicy Cheese Burger',
     slug: 'juicy-cheese-burger',
-    image: '/images/curry.jpeg',
+    image: '/images/burger.webp',
     summary: 'A mouth-watering burger with a juicy beef patty and melted cheese.',
     instructions: `
 1. Prepare the patty:
@@ -32,7 +32,7 @@ Heat a pan with a bit of oil. Cook the patty for 2–3 minutes on each side.
 3. Assemble the burger:
 Toast the burger bun halves. Place lettuce and tomato on the bun.
     `,
-    creator: 'Max',
+    creator: 'Alain',
     creator_email: 'max@example.com',
   },
   {
@@ -50,7 +50,7 @@ Spread tomato sauce, add cheese, and toppings of your choice.
 3. Bake:
 Bake in oven at 220°C for 12-15 minutes.
     `,
-    creator: 'Max',
+    creator: 'Iranzi',
     creator_email: 'max@example.com',
   },
   {
@@ -68,12 +68,12 @@ Heat oil, fry onions until golden, add spices and tomatoes. Simmer with vegetabl
 3. Serve:
 Serve hot with rice or bread.
     `,
-    creator: 'Max',
+    creator: 'Iranzi Alain',
     creator_email: 'max@example.com',
   },
 ];
 
-// Insert meals muri database
+
 const insertMeal = db.prepare(`
   INSERT INTO meals (
     title,

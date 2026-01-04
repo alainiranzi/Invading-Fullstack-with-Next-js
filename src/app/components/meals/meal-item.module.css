@@ -5,25 +5,20 @@
   box-shadow: 0 4px 10px rgba(0,0,0,0.1);
   display: flex;
   flex-direction: column;
-  align-items: center; /* Center everything */
-  text-align: center; /* Center text */
+  align-items: center; 
+  text-align: center; 
   padding: 1rem;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
-.meal:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
-}
-
-/* Image wrapper - small and centered */
 .imageWrapper {
-  width: 100px;  /* smaller */
-  height: 100px; /* smaller */
+  width: 200px;
+  height: 170px;
   position: relative;
   margin-bottom: 0.8rem;
   border-radius: 8px;
   overflow: hidden;
+  margin-left: auto;  
+  margin-right: auto; 
 }
 
 .imageWrapper img {
@@ -32,6 +27,7 @@
   object-fit: cover;
   display: block;
 }
+
 
 .headerText h2 {
   margin: 0;
