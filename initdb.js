@@ -20,7 +20,7 @@ const dummyMeals = [
   {
     title: 'Juicy Cheese Burger',
     slug: 'juicy-cheese-burger',
-    image: '/images/burger.webp',
+    image: '/images/curry.jpeg',
     summary: 'A mouth-watering burger with a juicy beef patty and melted cheese.',
     instructions: `
 1. Prepare the patty:
