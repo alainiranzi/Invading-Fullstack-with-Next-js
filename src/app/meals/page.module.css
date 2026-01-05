@@ -19,3 +19,19 @@
   background-color: #59453c;
   transform: translateY(-2px);
 }
+.loading {
+    text-align: center;
+    animation: loading 1.2s ease-in-out infinite;
+
+}
+@keyframes loading {
+    0% {
+        color: aliceblue;
+    }
+    50% {
+        color: #f9572a;
+    }
+    100% {
+        color: rgb(101, 153, 199);
+    }
+}
