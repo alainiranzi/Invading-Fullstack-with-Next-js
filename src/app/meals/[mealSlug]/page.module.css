@@ -1,75 +1,63 @@
-.main {
-  max-width: 800px;
-  margin: 3rem auto;
-  padding: 0 1rem;
-  color: #333;
-}
-
 .header {
- display: flex;
- padding: 2rem 1rem;
- gap: 3rem;
- margin:auto;
- max-width: 80rem;
-
+  display: flex;
+  align-items: center;        /* 🔑 byose bibe center vertically */
+  justify-content: center;    /* 🔑 center horizontally */
+  gap: 2rem;
+  margin: 2rem auto;
+  max-width: 900px;
 }
 
-.header img {
-  width: 30rem;
-  height: 20rem;
+/* Image wrapper */
+.image {
+  position: relative;        /* 🔑 required for Image fill */
+  width: 260px;              /* 🔑 ifoto nto */
+  height: 180px;
+  border-radius: 12px;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+/* Next/Image */
+.img {
   object-fit: cover;
-  border-radius: 8px;
-  box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.5);
-  animation: fade-slide-in-from-left 1s ease-out;
+}
+
+/* Text section */
+.headerText {
+  max-width: 500px;
+}
+
+.headerText h1 {
+  margin: 0;
+  font-size: 2rem;
 }
 
 .creator {
-  color: #666;
-  font-style: italic;
+  margin-top: 0.5rem;
+  font-size: 0.95rem;
+  color: #555;
 }
 
-.imageWrapper {
-  position: relative;
-  width: 100%;
-  height: 350px;
-  margin-bottom: 2rem;
-  border-radius: 12px;
-  overflow: hidden;
+.creator a {
+  color: #f9572a;
+  font-weight: bold;
+  text-decoration: none;
 }
 
-.image {
-  object-fit: cover;
+.creator a:hover {
+  text-decoration: underline;
 }
 
-.summary,
-.instructions {
-  margin-bottom: 2rem;
-}
-
-.summary h2,
-.instructions h2 {
-  margin-bottom: 0.5rem;
-}
-
-.instructions pre {
-  white-space: pre-wrap;
+.summary {
+  margin-top: 1rem;
+  font-size: 1.1rem;
   line-height: 1.6;
-  background-color: #a47878;
-  padding: 1rem;
-  border-radius: 8px;
 }
 
-.notFound {
-  text-align: center;
-  margin-top: 5rem;
-}
-.mealImage {
-  border-radius: 12px;
-  margin: 2rem auto;
-  display: block;
-}
-.mealDetails {
-  text-align: center;
-  font-size: 1.25rem;
-  color: #666;
+/* Instructions */
+.instructions {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 1rem;
+  line-height: 1.7;
 }
