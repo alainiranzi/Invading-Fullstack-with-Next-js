@@ -18,7 +18,7 @@ export default function ImageSlideshow() {
       setCurrentImageIndex(prev =>
         prev < images.length - 1 ? prev + 1 : 0
       );
-    }, 2000);
+    }, 4000);
 
     return () => clearInterval(interval);
   }, []);
