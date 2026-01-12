@@ -12,7 +12,7 @@ const meal = getMeal(params.mealSlug)
        <Image fill/>
       </div>
       <div className={classes.headerText}>
-        <h1>Meal Title</h1>
+        <h1>meal.title</h1>
         <p className={classes.creator}>
           by <a href={`mailto:${'EMAIL'}`}>NAME</a>
           </p>
