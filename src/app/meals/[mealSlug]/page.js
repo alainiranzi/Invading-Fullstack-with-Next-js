@@ -9,12 +9,12 @@ const meal = getMeal(params.mealSlug)
     <>
       <header className={classes.header}>
       <div className={classes.image}>
-       <Image fill/>
+       <Image src={meal.image} alt={meal.title} fill/>
       </div>
       <div className={classes.headerText}>
-        <h1>meal.title</h1>
+        <h1>{meal.title}</h1>
         <p className={classes.creator}>
-          by <a href={`mailto:${'EMAIL'}`}>NAME</a>
+          by <a href={`mailto:${meal.creator_Email}`}>{meal.name}</a>
           </p>
           <p className={classes.summary}>SUMMARY</p>
         </div>
