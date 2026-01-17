@@ -1,9 +1,12 @@
 import Image from 'next/image';
+
 import { getMeal } from '@/app/lib/meals';
 import classes from './page.module.css';
 
 export default function MealsDetailPage({params}) {
-const meal = getMeal(params.mealSlug)
+const meal = getMeal(params.mealSlug);
+
+meal.instructions = meal.instructions.replace(/\n/g, '<br/>');
 
   return (
     <>
