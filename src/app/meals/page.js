@@ -45,8 +45,8 @@ export default function ShareMealsPage() {
             ></textarea>
           </p>
 
-          {/* 👇 Hano ni ho ugomba kongeramo label na name */}
-          <ImagePicker label="Pick a meal image" name="mealImage" />
+     
+          <ImagePicker />
 
           <div className={classes.actions}>
             <button type="submit" className={classes.button}>
