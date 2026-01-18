@@ -3,13 +3,17 @@ import { getMeal } from '@/app/lib/meals';
 import classes from './page.module.css';
 
 export default async function MealsDetailPage({ params }) {
-  const { mealSlug } = await params;   // ✅ hano dukora await kuri params
+  const { mealSlug } = await params;   
 
   const meal = await getMeal(mealSlug);
 
-  // ✅ niba meal itabonetse
+
   if (!meal) {
-    return <p className={classes.notFound}>Meal not found</p>;
+    return <main className="not-found">
+            <h1>Meal Not Found</h1>
+            <p>Unfortunately, we could not find the requested page or meal data.</p>
+        </main>;
+        
   }
 
   meal.instructions = meal.instructions.replace(/\n/g, '<br/>');
