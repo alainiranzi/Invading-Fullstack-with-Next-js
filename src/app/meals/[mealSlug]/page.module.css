@@ -51,12 +51,13 @@
 }
 
 .instructions {
-  background: #251212;
+  background:rosybrown;
   padding: 1rem;
   border-radius: 12px;
   line-height: 1.5;
   font-size: 0.95rem;
-  white-space: pre-wrap; /* respect newlines in instructions */
+  white-space: pre-wrap; 
+  color: black;
 }
 
 .notFound {
