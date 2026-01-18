@@ -1,37 +1,113 @@
-.cta {
+/* ===== Header ===== */
+.header {
+  gap: 1rem;
+  margin: 3rem auto 5rem auto;
+  width: 90%;
+  max-width: 75rem;
+  color: #ddd6cb;
+  font-size: 1.5rem;
+}
+
+.header h1 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 2.5rem;
+}
+
+.highlight {
+  background: linear-gradient(90deg, #f9572a, #bb9e8c);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* ===== Main ===== */
+.main {
+  width: 90%;
+  max-width: 45rem;
+  margin: 0 auto 5rem auto;
+}
+
+/* ===== Form ===== */
+.form {
+  background: #1f1f1f;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+}
+
+.form p {
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  margin-bottom: 1rem;
+}
+
+.form label {
+  font-size: 0.9rem;
+  font-weight: bold;
+  color: #ddd6cb;
+  margin-bottom: 0.3rem;
+}
+
+.form input,
+.form textarea {
+  padding: 0.6rem 0.75rem;
+  border-radius: 6px;
+  border: 1px solid #444;
+  background: #2a2a2a;
+  color: #fff;
+  font-size: 0.95rem;
+}
+
+.form input:focus,
+.form textarea:focus {
+  outline: none;
+  border-color: #f9572a;
+  background: #2f2f2f;
+}
+
+/* ===== Row (Name + Email) ===== */
+.row {
+  display: flex;
   gap: 1rem;
 }
 
-.cta a {
-  display: inline-block;
-  padding: 0.75rem 1.5rem;
-  border-radius: 0.5rem;
-  background-color: #e45a05;
-  color: rgb(168, 32, 32);
-  text-decoration: none;
+.row p {
+  flex: 1;
+}
+
+/* ===== Actions ===== */
+.actions {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 1.5rem;
+}
+
+/* ===== Button ===== */
+.button {
+  padding: 0.75rem 2rem;
+  border-radius: 999px;
+  border: none;
+  background: #f9572a;
+  color: white;
+  font-size: 0.95rem;
   font-weight: bold;
-  transition: background 0.3s ease, transform 0.2s ease;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
 }
 
-.cta a:hover {
-  background-color: #59453c;
+.button:hover {
+  background: #ff7a4d;
   transform: translateY(-2px);
+  box-shadow: 0 6px 15px rgba(249, 87, 42, 0.5);
 }
-.loading {
-    text-align: center;
-    animation: loading 1.2s ease-in-out infinite;
 
+.button:active {
+  transform: translateY(0);
+  box-shadow: 0 3px 8px rgba(249, 87, 42, 0.4);
 }
-@keyframes loading {
-    0% {
-        color: aliceblue;
-    }
-    50% {
-        color: #f9572a;
-    }
-    100% {
-        color: rgb(101, 153, 199);
-    }
+
+.button:disabled {
+  background: #b94a2c;
+  cursor: not-allowed;
+  opacity: 0.7;
 }
