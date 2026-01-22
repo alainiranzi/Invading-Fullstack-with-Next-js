@@ -17,13 +17,13 @@ export async function saveMeal(meal) {
   meal.slug = slugify(meal.title, { lower: true });
   meal.instructions = xss(meal.instructions);
 
+  // handle image
   const extension = meal.image.name.split('.').pop();
   const fileName = `${meal.slug}.${extension}`;
-
-  const imagePath = `public/images/meals/${fileName}`;
+  const filePath = `public/images/meals/${fileName}`;
 
   const bufferedImage = await meal.image.arrayBuffer();
-  fs.writeFileSync(imagePath, Buffer.from(bufferedImage));
+  fs.writeFileSync(filePath, Buffer.from(bufferedImage));
 
   meal.image = `/images/meals/${fileName}`;
 
