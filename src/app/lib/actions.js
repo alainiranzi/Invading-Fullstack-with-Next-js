@@ -13,5 +13,5 @@ export async function shareMeal(formData) {
   };
 
   await saveMeal(meal);
-  return { success: true };
+ 
 }
