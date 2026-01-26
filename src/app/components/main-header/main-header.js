@@ -13,19 +13,19 @@ export default function MainHeader() {
       <MainHeaderBackground />
 
       <header className={classes.header}>
-        {/* Slideshow */}
-        <ImageSlideshow />
+        
+        
 
-        {/* Hero */}
+        
         <div className={classes.hero}>
           <h1>Next food for next level foodies</h1>
           <p>Taste & share food from all over the world</p>
         </div>
 
-        {/* Navigation / CTA */}
+       
         <div className={classes.cta}>
-          <NavLink href="/meals">Explore foodies</NavLink>
-          <NavLink href="/community">Join the community</NavLink>
+          <Link href="/meals">Explore foodies</Link>
+          <Link href="/community">Join the community</Link>
         </div>
       </header>
     </>
