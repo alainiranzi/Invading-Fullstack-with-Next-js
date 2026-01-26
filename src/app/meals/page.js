@@ -4,6 +4,7 @@ import { shareMeal } from "@/app/lib/actions";
 import Link from "next/link";
 
 
+
 export default function ShareMealsPage() {
   
 
@@ -15,7 +16,7 @@ export default function ShareMealsPage() {
   </h1>
   <p>Or any other meal you feel needs sharing!</p>
 
-  {/* NEW BUTTONS */}
+ 
   <div className={classes.nav}>
     <Link href="/meals" className={classes.link}>
       🍽 Browse Meals
