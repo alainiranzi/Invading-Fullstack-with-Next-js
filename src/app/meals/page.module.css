@@ -1,4 +1,4 @@
-/* ===== Header ===== */
+
 .header {
   gap: 1rem;
   margin: 3rem auto 5rem auto;
@@ -20,14 +20,14 @@
   -webkit-text-fill-color: transparent;
 }
 
-/* ===== Main ===== */
+
 .main {
   width: 90%;
   max-width: 45rem;
   margin: 0 auto 5rem auto;
 }
 
-/* ===== Form ===== */
+
 .form {
   background: #1f1f1f;
   padding: 2rem;
@@ -65,7 +65,7 @@
   background: #2f2f2f;
 }
 
-/* ===== Row (Name + Email) ===== */
+
 .row {
   display: flex;
   gap: 1rem;
@@ -75,14 +75,13 @@
   flex: 1;
 }
 
-/* ===== Actions ===== */
 .actions {
   display: flex;
   justify-content: flex-end;
   margin-top: 1.5rem;
 }
 
-/* ===== Button ===== */
+
 .button {
   padding: 0.75rem 2rem;
   border-radius: 999px;
@@ -111,3 +110,35 @@
   cursor: not-allowed;
   opacity: 0.7;
 }
+.nav {
+  margin-top: 2rem;
+  display: flex;
+  gap: 1rem;
+}
+
+.link {
+  background-color: #f59e0b;
+  color: white;
+  padding: 0.6rem 1.2rem;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.linkAlt {
+  background-color: transparent;
+  border: 2px solid #f59e0b;
+  color: #f59e0b;
+  padding: 0.6rem 1.2rem;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: bold;
+}
+.link:hover {
+  background-color: #d97706;
+}
+.linkAlt:hover {
+  background-color: #f59e0b;
+  color: white;
+}
+

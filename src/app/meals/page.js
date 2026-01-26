@@ -1,20 +1,32 @@
-'use client';
-
 import ImagePicker from "@/app/components/meals/image-picker";
 import classes from './page.module.css';
 import { shareMeal } from "@/app/lib/actions";
+import Link from "next/link";
+
 
 export default function ShareMealsPage() {
   
 
   return (
     <>
-      <header className={classes.header}>
-        <h1>
-          Share Your <span className={classes.highlight}>Delicious Meals</span>
-        </h1>
-        <p>Or any other meal you feel needs sharing!</p>
-      </header>
+     <header className={classes.header}>
+  <h1>
+    Share Your <span className={classes.highlight}>Delicious Meals</span>
+  </h1>
+  <p>Or any other meal you feel needs sharing!</p>
+
+  {/* NEW BUTTONS */}
+  <div className={classes.nav}>
+    <Link href="/meals" className={classes.link}>
+      🍽 Browse Meals
+    </Link>
+
+    <Link href="/community" className={classes.linkAlt}>
+      🤝 Join the Community
+    </Link>
+  </div>
+</header>
+
 
       <main className={classes.main}>
         <form className={classes.form} action={shareMeal}>
