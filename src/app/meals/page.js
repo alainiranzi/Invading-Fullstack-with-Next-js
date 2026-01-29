@@ -2,6 +2,7 @@ import ImagePicker from "@/app/components/main-header/meals/image-picker";
 import classes from "./page.module.css";
 import { shareMeal } from "@/app/lib/actions";
 import Link from "next/link";
+import MealItem from "../components/main-header/meals/meal-item";
 
 export default function ShareMealsPage() {
   return (
