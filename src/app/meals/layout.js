@@ -1,10 +1,8 @@
 export default function MealsLayout({ children }) {
   return (
-   <html lang="en">
-    <body>
+    <div>
+      {/* No MainHeader here */}
       {children}
-
-    </body>
-   </html>
+    </div>
   );
 }

@@ -1,21 +1,18 @@
+"use client";
+import { usePathname } from "next/navigation";
 import MainHeader from "./components/main-header/main-header";
 
-
-import "./globals.css";
-
-export const metadata = {
-  title: "NextLevel Meals",
-  description: "Delicious meals shared by our community",
-};
-
 export default function RootLayout({ children }) {
+  const pathname = usePathname();
+
+  const showHeader = pathname !== "/meals"; // hide header on meals pages
+
   return (
-        <>
-        <html lang="en" /> 
-        <body>
-            <MainHeader />
-            {children}
-            </body>
-        </>
+    <html lang="en">
+      <body>
+        {showHeader && <MainHeader />}
+        {children}
+      </body>
+    </html>
   );
 }
