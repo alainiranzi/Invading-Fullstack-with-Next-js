@@ -39,6 +39,8 @@
   border: 1px solid #ddd;
   margin-bottom: 1rem;
   position: relative;
+  color:#b3b9c6;
+  text-align: center;
 }
 
 .previewImage {
