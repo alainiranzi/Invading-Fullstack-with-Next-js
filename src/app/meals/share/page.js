@@ -10,13 +10,13 @@ export default function ShareMealsPage() {
         <h1>
           Share Your <span className={classes.highlight}>Delicious Meals</span>
         </h1>
+        <p>Or any other meal you feel needs sharing!</p>
 
+        {/* Nav buttons */}
         <div className={classes.nav}>
-        
           <Link href="/meals" className={classes.link}>
             🍽 Browse Meals
           </Link>
-
           <Link href="/community" className={classes.linkAlt}>
             🤝 Join the Community
           </Link>
@@ -26,17 +26,38 @@ export default function ShareMealsPage() {
       <main className={classes.main}>
         <form className={classes.form} action={shareMeal}>
           <div className={classes.row}>
-            <input type="text" name="name" placeholder="Your Name" required />
-            <input type="email" name="email" placeholder="Your Email" required />
+            <p>
+              <label htmlFor="name">Your Name</label>
+              <input type="text" id="name" name="name" required />
+            </p>
+            <p>
+              <label htmlFor="email">Your Email</label>
+              <input type="email" id="email" name="email" required />
+            </p>
           </div>
 
-          <input type="text" name="title" placeholder="Meal Title" required />
-          <input type="text" name="summary" placeholder="Short Summary" required />
-          <textarea name="instructions" placeholder="Instructions" rows={6} required />
+          <p>
+            <label htmlFor="title">Meal Title</label>
+            <input type="text" id="title" name="title" required />
+          </p>
+
+          <p>
+            <label htmlFor="summary">Short Summary</label>
+            <input type="text" id="summary" name="summary" required />
+          </p>
+
+          <p>
+            <label htmlFor="instructions">Instructions</label>
+            <textarea id="instructions" name="instructions" rows={8} required />
+          </p>
 
           <ImagePicker label="Meal Image" name="image" />
 
-          <button type="submit">Share Meal</button>
+          <div className={classes.actions}>
+            <button type="submit" className={classes.button}>
+              Share Meal
+            </button>
+          </div>
         </form>
       </main>
     </>
