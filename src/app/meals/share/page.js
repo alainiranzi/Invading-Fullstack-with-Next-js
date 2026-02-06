@@ -1,7 +1,7 @@
 import ImagePicker from "@/app/components/main-header/meals/image-picker";
 import { shareMeal } from "@/app/lib/actions";
 import Link from "next/link";
-import classes from "../page.module.css";
+import classes from "./page.module.css";
 
 export default function ShareMealsPage() {
   return (
@@ -12,7 +12,7 @@ export default function ShareMealsPage() {
         </h1>
 
         <div className={classes.nav}>
-          {/* 🔹 THIS NOW WORKS */}
+        
           <Link href="/meals" className={classes.link}>
             🍽 Browse Meals
           </Link>
