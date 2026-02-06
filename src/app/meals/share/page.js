@@ -1,7 +1,7 @@
 import ImagePicker from "@/app/components/main-header/meals/image-picker";
 import { shareMeal } from "@/app/lib/actions";
 import Link from "next/link";
-import classes from "./page.module.css";
+import classes from "../page.module.css";
 
 export default function ShareMealsPage() {
   return (
@@ -12,7 +12,7 @@ export default function ShareMealsPage() {
         </h1>
 
         <div className={classes.nav}>
-          {/* 🔥 THIS NOW WORKS */}
+          {/* 🔹 THIS NOW WORKS */}
           <Link href="/meals" className={classes.link}>
             🍽 Browse Meals
           </Link>
@@ -26,13 +26,13 @@ export default function ShareMealsPage() {
       <main className={classes.main}>
         <form className={classes.form} action={shareMeal}>
           <div className={classes.row}>
-            <input name="name" required />
-            <input name="email" required />
+            <input type="text" name="name" placeholder="Your Name" required />
+            <input type="email" name="email" placeholder="Your Email" required />
           </div>
 
-          <input name="title" required />
-          <input name="summary" required />
-          <textarea name="instructions" required />
+          <input type="text" name="title" placeholder="Meal Title" required />
+          <input type="text" name="summary" placeholder="Short Summary" required />
+          <textarea name="instructions" placeholder="Instructions" rows={6} required />
 
           <ImagePicker label="Meal Image" name="image" />
 
