@@ -24,7 +24,7 @@ export default function MainHeader() {
 
        
         <div className={classes.cta}>
-          <Link href="/meals">Explore foodies</Link>
+          <Link href="/meals/share">Explore foodies</Link>
           <Link href="/community">Join the community</Link>
         </div>
       </header>
