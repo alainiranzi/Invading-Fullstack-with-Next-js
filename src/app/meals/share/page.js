@@ -1,3 +1,6 @@
+
+
+import MealsFormSubmit from "@/app/components/main-header/meals/meals-form-submit";
 import ImagePicker from "@/app/components/main-header/meals/image-picker";
 import { shareMeal } from "@/app/lib/actions";
 import Link from "next/link";
@@ -12,7 +15,6 @@ export default function ShareMealsPage() {
         </h1>
         <p>Or any other meal you feel needs sharing!</p>
 
-        {/* Nav buttons */}
         <div className={classes.nav}>
           <Link href="/meals" className={classes.link}>
             🍽 Browse Meals
@@ -24,7 +26,12 @@ export default function ShareMealsPage() {
       </header>
 
       <main className={classes.main}>
-        <form className={classes.form} action={shareMeal}>
+        <form
+          className={classes.form}
+          action={shareMeal}
+          method="post" // ✅ Must be POST for useFormStatus
+          encType="multipart/form-data" // ✅ Must be set for file uploads
+        >
           <div className={classes.row}>
             <p>
               <label htmlFor="name">Your Name</label>
@@ -48,15 +55,18 @@ export default function ShareMealsPage() {
 
           <p>
             <label htmlFor="instructions">Instructions</label>
-            <textarea id="instructions" name="instructions" rows={8} required />
+            <textarea
+              id="instructions"
+              name="instructions"
+              rows={8}
+              required
+            />
           </p>
 
-          <ImagePicker label="Meal Image" name="image" />
+          <ImagePicker label="Your Image" name="image" />
 
           <div className={classes.actions}>
-            <button type="submit" className={classes.button}>
-              Share Meal
-            </button>
+            <MealsFormSubmit />
           </div>
         </form>
       </main>
