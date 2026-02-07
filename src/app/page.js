@@ -1,10 +1,12 @@
 import Link from "next/link";
 import classes from "./page.module.css";
 import ImageSlideshow from "./components/images/image-slideshow";
+import MainHeader from "./components/main-header/main-header";
 
 export default function Home() {
   return (
     <>
+      <MainHeader />
       
 
       <main>
