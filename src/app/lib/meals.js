@@ -1,34 +1,44 @@
-import fs from 'node:fs';
-import sql from 'better-sqlite3';
-import slugify from 'slugify';
-import xss from 'xss';
-import path from 'node:path';
+import fs from "node:fs";
+import path from "node:path";
+import sql from "better-sqlite3";
+import slugify from "slugify";
+import xss from "xss";
 
-const db = sql('meals.db');
+const db = sql("meals.db");
 
 export function getMeals() {
-  return db.prepare('SELECT * FROM meals').all();
+  return db.prepare("SELECT * FROM meals").all();
 }
 
 export function getMeal(slug) {
-  return db.prepare('SELECT * FROM meals WHERE slug = ?').get(slug);
+  return db.prepare("SELECT * FROM meals WHERE slug = ?").get(slug);
 }
 
 export async function saveMeal(meal) {
   meal.slug = slugify(meal.title, { lower: true });
   meal.instructions = xss(meal.instructions);
 
-  const extension = meal.image.name.split('.').pop();
+  // 🟢 FILE IMAGE
+  const image = meal.image;
+
+  if (!image || image.size === 0) {
+    throw new Error("No image provided");
+  }
+
+  const extension = image.name.split(".").pop();
   const fileName = `${meal.slug}.${extension}`;
 
-  const stream = fs.createWriteStream(`public/images/meals/${fileName}`);
-  const bufferedImage = await meal.image.arrayBuffer();
+  const filePath = path.join(
+    process.cwd(),
+    "public",
+    "images",
+    "meals",
+    fileName
+  );
 
-  stream.write(Buffer.from(bufferedImage), (error) => {
-    if (error) {
-      throw new Error('Saving image failed!');
-    }
-  });
+  const bufferedImage = await image.arrayBuffer();
+
+  await fs.promises.writeFile(filePath, Buffer.from(bufferedImage));
 
   meal.image = `/images/meals/${fileName}`;
 

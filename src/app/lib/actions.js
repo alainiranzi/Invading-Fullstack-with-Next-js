@@ -1,6 +1,6 @@
 'use server';
-
-import { saveMeal } from './meals.js';
+import { redirect } from 'next/navigation';
+import { saveMeal } from "./meals.js";
 
 export async function shareMeal(formData) {
   const meal = {
@@ -13,5 +13,7 @@ export async function shareMeal(formData) {
   };
 
   await saveMeal(meal);
- 
+  redirect('/meals');
+
+  
 }
