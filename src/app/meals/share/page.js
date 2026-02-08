@@ -17,10 +17,10 @@ export default function ShareMealsPage() {
 
         <div className={classes.nav}>
           <Link href="/meals" className={classes.link}>
-            🍽 Browse Meals
+            Browse Meals
           </Link>
           <Link href="/community" className={classes.linkAlt}>
-            🤝 Join the Community
+            Join the Community
           </Link>
         </div>
       </header>
@@ -29,8 +29,8 @@ export default function ShareMealsPage() {
         <form
           className={classes.form}
           action={shareMeal}
-          method="post" // ✅ Must be POST for useFormStatus
-          encType="multipart/form-data" // ✅ Must be set for file uploads
+          method="post" 
+          encType="multipart/form-data"
         >
           <div className={classes.row}>
             <p>
