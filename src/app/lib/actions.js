@@ -13,13 +13,13 @@ export async function shareMeal(formData) {
   };
 
  if (
-  !meal.title ||
-  !meal.summary ||
-  !meal.instructions ||
-  !meal.creator ||
-  !meal.image ||
-  !meal.creator_email ||
+  isInvalidText(meal.title) ||
+  isInvalidText(meal.summary) ||
+  isInvalidText(meal.instructions) ||
+  isInvalidText(meal.creator) ||
+  isInvalidText(meal.creator_email) ||
   !meal.creator_email.includes("@") ||
+  !meal.image ||
   meal.image.size === 0
 ) {
   throw new Error("Invalid input data");
