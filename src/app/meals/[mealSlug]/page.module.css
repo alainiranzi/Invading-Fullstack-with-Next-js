@@ -1,5 +1,5 @@
 .main {
-  max-width: 800px;
+  max-width: 790px;
   margin: 2rem auto;
   padding: 0 1rem;
   font-family: sans-serif;
@@ -36,7 +36,7 @@
 }
 
 .creator a {
-  color: #f9572a;
+  color: #e97251;
   text-decoration: none;
 }
 
