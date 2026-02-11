@@ -6,7 +6,8 @@ import xss from "xss";
 
 const db = sql("meals.db");
 
-export function getMeals() {
+export async function getMeals() {
+  await new Promise((resolve) => setTimeout(resolve, 5000));
   return db.prepare("SELECT * FROM meals").all();
 }
 
@@ -18,7 +19,7 @@ export async function saveMeal(meal) {
   meal.slug = slugify(meal.title, { lower: true });
   meal.instructions = xss(meal.instructions);
 
-  // 🟢 FILE IMAGE
+  
   const image = meal.image;
 
   if (!image || image.size === 0) {
