@@ -10,7 +10,7 @@ import classes from "./page.module.css";
 
 
 export default function ShareMealsPage() {
-  const [state, formAction] = useFormState(shareMeal, {message: null});
+  const [state, formAction] = useActionState(shareMeal, {message: null});
   return (
     <>
       <header className={classes.header}>
