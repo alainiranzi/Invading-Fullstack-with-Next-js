@@ -1,16 +1,14 @@
-"use client";
-import { usePathname } from "next/navigation";
+import "./global.css";
 
+export const metadata = {
+  title: "Meals",
+  description: "Discover and share delicious meals from around the world.",
+};
 
 export default function RootLayout({ children }) {
-  const pathname = usePathname();
-
-
-
   return (
     <html lang="en">
       <body>
-      
         {children}
       </body>
     </html>
