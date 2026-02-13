@@ -4,7 +4,7 @@ import sql from "better-sqlite3";
 import slugify from "slugify";
 import xss from "xss";
 
-const db = sql("meals.db");
+const db = sql(path.join(process.cwd(), "meals.db"));
 
 export async function getMeals() {
   await new Promise((resolve) => setTimeout(resolve, 4000));
@@ -19,7 +19,6 @@ export async function saveMeal(meal) {
   meal.slug = slugify(meal.title, { lower: true });
   meal.instructions = xss(meal.instructions);
 
-  
   const image = meal.image;
 
   if (!image || image.size === 0) {
@@ -29,13 +28,7 @@ export async function saveMeal(meal) {
   const extension = image.name.split(".").pop();
   const fileName = `${meal.slug}.${extension}`;
 
-  const filePath = path.join(
-    process.cwd(),
-    "public",
-    "images",
-    "meals",
-    fileName
-  );
+  const filePath = path.join(process.cwd(), "public", "images", "meals", fileName);
 
   const bufferedImage = await image.arrayBuffer();
 

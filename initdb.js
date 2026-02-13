@@ -1,7 +1,13 @@
-const sql = require('better-sqlite3');
-const db = sql('meals.db');
+// db-init.js
+import sql from "better-sqlite3";
+import path from "path";
+import fs from "fs";
 
+// Define database path
+const dbPath = path.join(process.cwd(), "meals.db");
+const db = sql(dbPath);
 
+// 1️⃣ Create table if not exists
 db.prepare(`
   CREATE TABLE IF NOT EXISTS meals (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
@@ -15,13 +21,13 @@ db.prepare(`
   )
 `).run();
 
-
+// 2️⃣ Dummy meals
 const dummyMeals = [
   {
-    title: 'Juicy Cheese Burger',
-    slug: 'juicy-cheese-burger',
-    image: '/images/burger.webp',
-    summary: 'A mouth-watering burger with a juicy beef patty and melted cheese.',
+    title: "Juicy Cheese Burger",
+    slug: "juicy-cheese-burger",
+    image: "burger.webp",
+    summary: "A mouth-watering burger with a juicy beef patty and melted cheese.",
     instructions: `
 1. Prepare the patty:
 Mix 200g of ground beef with salt and pepper. Form into a patty.
@@ -32,14 +38,14 @@ Heat a pan with a bit of oil. Cook the patty for 2–3 minutes on each side.
 3. Assemble the burger:
 Toast the burger bun halves. Place lettuce and tomato on the bun.
     `,
-    creator: 'Alain',
-    creator_email: 'max@example.com',
+    creator: "Alain",
+    creator_email: "max@example.com",
   },
   {
-    title: 'Delicious Pizza',
-    slug: 'delicious-pizza',
-    image: '/images/pizza.jpeg',
-    summary: 'A cheesy pizza topped with fresh tomatoes and basil.',
+    title: "Delicious Pizza",
+    slug: "delicious-pizza",
+    image: "pizza.jpeg",
+    summary: "A cheesy pizza topped with fresh tomatoes and basil.",
     instructions: `
 1. Prepare dough:
 Mix flour, yeast, salt, and water. Knead into dough.
@@ -50,14 +56,14 @@ Spread tomato sauce, add cheese, and toppings of your choice.
 3. Bake:
 Bake in oven at 220°C for 12-15 minutes.
     `,
-    creator: 'Iranzi',
-    creator_email: 'max@example.com',
+    creator: "Iranzi",
+    creator_email: "max@example.com",
   },
   {
-    title: 'Spicy Curry',
-    slug: 'spicy-curry',
-    image: '/images/curry.jpeg',
-    summary: 'A flavorful curry with a rich blend of spices and vegetables.',
+    title: "Spicy Curry",
+    slug: "spicy-curry",
+    image: "curry.jpeg",
+    summary: "A flavorful curry with a rich blend of spices and vegetables.",
     instructions: `
 1. Prepare ingredients:
 Chop onions, tomatoes, and vegetables.
@@ -68,34 +74,25 @@ Heat oil, fry onions until golden, add spices and tomatoes. Simmer with vegetabl
 3. Serve:
 Serve hot with rice or bread.
     `,
-    creator: 'Iranzi Alain',
-    creator_email: 'max@example.com',
+    creator: "Iranzi Alain",
+    creator_email: "max@example.com",
   },
 ];
 
-
+// 3️⃣ Insert or update meals in DB with proper image paths
 const insertMeal = db.prepare(`
-  INSERT INTO meals (
-    title,
-    slug,
-    image,
-    summary,
-    instructions,
-    creator,
-    creator_email
+  INSERT OR REPLACE INTO meals (
+    title, slug, image, summary, instructions, creator, creator_email
   ) VALUES (
-    @title,
-    @slug,
-    @image,
-    @summary,
-    @instructions,
-    @creator,
-    @creator_email
+    @title, @slug, @image, @summary, @instructions, @creator, @creator_email
   )
 `);
 
 for (const meal of dummyMeals) {
+  // Ensure image path starts with /images/meals/
+  meal.image = `/images/meals/${meal.image}`;
+
   insertMeal.run(meal);
 }
 
-console.log('Database initialized successfully!');
+console.log("Database initialized successfully with meals!");
