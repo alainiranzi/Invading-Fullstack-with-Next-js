@@ -1,33 +1,19 @@
 import Image from "next/image";
 import { getMeal } from "@/app/lib/meals";
 import classes from "./page.module.css";
-import { notFound } from "next/navigation";
-
-
-export async function generateMetadata({ params }) {
-  const meal = await getMeal(params.mealSlug.toLowerCase());
-  if (!meal) return { title: "Meal Not Found" };
-  return {
-    title: meal.title,
-    description: meal.summary,
-  };
-}
-
 
 export default async function MealDetailPage({ params }) {
-  const { mealSlug } = params;
 
+  // ⬇️ Next 16 fix
+  const { mealSlug } = await params;
 
-  const slug = mealSlug.toLowerCase();
+  console.log("Requested slug:", mealSlug);
 
-  console.log("Requested slug:", slug); // Debug: check requested slug
+  const meal = getMeal(mealSlug);
 
-  const meal = await getMeal(slug);
-
-  console.log("Fetched meal:", meal); // Debug: check DB result
+  console.log("Fetched meal:", meal);
 
   if (!meal) {
-
     return (
       <main className={classes.notFound}>
         <h1>Meal Not Found</h1>
@@ -35,7 +21,6 @@ export default async function MealDetailPage({ params }) {
       </main>
     );
   }
-
 
   meal.instructions = meal.instructions.replace(/\n/g, "<br/>");
 
@@ -45,6 +30,7 @@ export default async function MealDetailPage({ params }) {
         <div className={classes.image}>
           <Image src={meal.image} alt={meal.title} fill />
         </div>
+
         <div className={classes.headerText}>
           <h1>{meal.title}</h1>
           <p className={classes.creator}>

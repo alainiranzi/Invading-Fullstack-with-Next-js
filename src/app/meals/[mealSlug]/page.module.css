@@ -1,8 +1,9 @@
 .main {
   max-width: 790px;
   margin: 2rem auto;
-  padding: 0 1rem;
+  padding: 0rem 1rem;
   font-family: sans-serif;
+ 
 }
 
 .header {
@@ -10,7 +11,7 @@
   flex-direction: column;
   align-items: center; 
   text-align: left;
-  margin-bottom: 2rem;
+  
 }
 
 .image {
@@ -19,20 +20,21 @@
   height: 200px; 
   border-radius: 12px;
   overflow: hidden;
-  margin-bottom: 1rem;
+  margin-bottom: 0rem;
   box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  margin-top: 3rem;
 }
 
 .headerText h1 {
   margin: 0.5rem 0;
-  font-size: 1.5rem;
+  font-size: 3rem;
   text-align: left;
 }
 
 .creator {
   margin: 0.25rem 0;
   font-size: 0.9rem;
-  color: #555;
+  color: #928080;
 }
 
 .creator a {
@@ -46,16 +48,16 @@
 
 .summary {
   font-size: 1rem;
-  color: #333;
+  color: #e7c483;
   margin-top: 0.5rem;
 }
 
 .instructions {
-  background:rosybrown;
+  background:rgb(182, 148, 148);
   padding: 1rem;
   border-radius: 12px;
   line-height: 1.5;
-  font-size: 0.95rem;
+  font-size: 0.9rem;
   white-space: pre-wrap; 
   color: black;
 }
