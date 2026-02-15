@@ -2,9 +2,21 @@ import Image from "next/image";
 import { getMeal } from "@/app/lib/meals";
 import classes from "./page.module.css";
 
+export async function generateMetadata({ params }) {
+  const meal = getMeal(params.mealSlug);
+
+  if (!meal) {
+    notFound();
+  }
+  return {
+    title: meal.title,
+    description: meal.summary,
+  };
+}
+
 export default async function MealDetailPage({ params }) {
 
-  // ⬇️ Next 16 fix
+  
   const { mealSlug } = await params;
 
   console.log("Requested slug:", mealSlug);
