@@ -18,7 +18,7 @@ export default function Home() {
             share your own culinary creations.
           </p>
           <p>
-            Whether you're looking for inspiration for your next meal or want to
+            Whether you are looking for inspiration for your next meal or want to
             share your own culinary creations.
           </p>
         </section>
